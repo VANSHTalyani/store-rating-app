@@ -1,7 +1,7 @@
 # StoreRating - Multi-Role Store Rating Portal
 
-### Live Deployment (Placeholder)
-**[Launch StoreRating Application](https://store-rating-portal.example.com)**
+### Live Deployment
+**[Launch StoreRating Application](https://store-rating-app-sandy.vercel.app/)**
 
 ---
 

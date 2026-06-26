@@ -14,6 +14,7 @@ const initDatabase = async () => {
       port: DB_PORT || 3306,
       user: DB_USER || 'root',
       password: DB_PASSWORD || '',
+      ssl: process.env.DB_SSL === 'true' || process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : undefined
     });
 
     // Create database if it does not exist
@@ -37,6 +38,11 @@ const getSequelizeInstance = () => {
         port: DB_PORT || 3306,
         dialect: 'mysql',
         logging: false, // Set to console.log to debug SQL queries
+        dialectOptions: process.env.DB_SSL === 'true' || process.env.NODE_ENV === 'production' ? {
+          ssl: {
+            rejectUnauthorized: false
+          }
+        } : undefined,
         pool: {
           max: 5,
           min: 0,
